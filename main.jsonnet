@@ -6,7 +6,7 @@ local t = import 'kube-thanos/thanos.libsonnet';
 local commonConfig = {
   config+:: {
     local cfg = self,
-    namespace: 'monitoring',
+    namespace: 'default',
     version: 'v0.24.0',
     image: 'quay.io/thanos/thanos:' + cfg.version,
     imagePullPolicy: 'IfNotPresent',

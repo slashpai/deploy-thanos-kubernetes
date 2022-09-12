@@ -9,7 +9,7 @@ metadata:
     controller.receive.thanos.io: thanos-receive-controller
     controller.receive.thanos.io/hashring: default
   name: thanos-receive-ingestor-default
-  namespace: monitoring
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -43,7 +43,7 @@ spec:
                   values:
                   - thanos-receive-ingestor-default
               namespaces:
-              - monitoring
+              - default
               topologyKey: kubernetes.io/hostname
             weight: 100
           - podAffinityTerm:
@@ -58,7 +58,7 @@ spec:
                   values:
                   - thanos-receive-ingestor-default
               namespaces:
-              - monitoring
+              - default
               topologyKey: topology.kubernetes.io/zone
             weight: 100
       containers:
